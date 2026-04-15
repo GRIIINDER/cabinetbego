@@ -1,48 +1,50 @@
-# Wordpress - ignore core, configuration, examples, uploads and logs.
-# https://github.com/github/gitignore/blob/main/WordPress.gitignore
-
-# Core
-#
-# Note: if you want to stage/commit WP core files
-# you can delete this whole section/until Configuration.
-/wp-admin/
-/wp-content/index.php
-/wp-content/languages
-/wp-content/plugins/index.php
-/wp-content/themes/index.php
-/wp-includes/
-/index.php
-/license.txt
-/readme.html
-/wp-*.php
-/xmlrpc.php
-
-# Configuration
+# WordPress — fichiers sensibles à ne jamais uploader
 wp-config.php
+wp-config-sample.php
 
-# Example themes
-/wp-content/themes/twenty*/
+# Uploads WordPress (médias)
+wp-content/uploads/
 
-# Example plugin
-/wp-content/plugins/hello.php
+# Cache WordPress
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
 
-# Uploads
-/wp-content/uploads/
+# Fichiers de sauvegarde
+*.sql
+*.sql.gz
+*.tar
+*.tar.gz
+*.zip
+*.rar
 
-# Log files
+# Logs
 *.log
+error_log
+debug.log
 
-# htaccess
-/.htaccess
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
 
-# All plugins
-#
-# Note: If you wish to whitelist plugins,
-# uncomment the next line
-#/wp-content/plugins
+# Variables d'environnement
+.env
+.env.*
+*.env
 
-# All themes
-#
-# Note: If you wish to whitelist themes,
-# uncomment the next line
-#/wp-content/themes
+# Node
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Fichiers sensibles
+secrets.json
+api_keys.json
+credentials.json
+
+# Plugins et thèmes tiers (non personnalisés)
+wp-content/plugins/
+wp-content/themes/twenty*/
