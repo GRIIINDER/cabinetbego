@@ -564,53 +564,121 @@ export const infoPages: Record<Locale, Record<string, InfoPageContent>> = {
       slug: "confidentialite",
       kicker: "Infos",
       title: "Politique de protection des données personnelles",
-      intro:
-        "Le Bureau d'Études et de Gestion des Organisations (BEGO), éditeur du site cabinetbego.com, attache une grande importance à la protection de vos données personnelles.",
       sections: [
         {
-          heading: "Données collectées",
+          heading: "Introduction",
           paragraphs: [
-            "L'entreprise recueille les coordonnées, informations professionnelles, données de navigation et renseignements fournis via les formulaires du site.",
+            "Le Bureau d'Études et de Gestion des Organisations (BEGO), éditeur du site cabinetbego.com, attache une grande importance à la protection de vos données personnelles. Cette politique de protection des données personnelles a pour objectif de vous informer sur la manière dont nous collectons, utilisons, protégeons et conservons vos données personnelles dans le cadre de l'utilisation de notre site internet et de nos services.",
           ],
         },
         {
-          heading: "Finalités du traitement",
+          heading: "Données personnelles collectées",
+          paragraphs: ["Les données personnelles que nous collectons peuvent inclure, mais ne sont pas limitées à :"],
           items: [
-            "Répondre à vos demandes d'information ou de contact",
-            "Vous fournir les services que vous avez sollicités",
-            "Vous informer des actualités de BEGO",
+            "Vos coordonnées (nom, prénom, adresse email, numéro de téléphone) ;",
+            "Vos informations professionnelles (poste, entreprise, secteur d'activité) ;",
+            "Les données de navigation (adresse IP, pages consultées, durée de visite) ;",
+            "Les informations fournies via les formulaires de contact, d'inscription ou de demande de devis.",
           ],
         },
         {
-          heading: "Fondement légal",
+          heading: "Finalités de la collecte des données",
+          paragraphs: ["Les données personnelles que nous collectons sont utilisées pour les finalités suivantes :"],
+          items: [
+            "Répondre à vos demandes d'information ou de contact ;",
+            "Vous fournir les services que vous avez sollicités ;",
+            "Vous informer des actualités, offres et événements liés à BEGO (avec votre consentement) ;",
+            "Améliorer la qualité de nos services et de notre site internet ;",
+            "Respecter nos obligations légales et réglementaires.",
+          ],
+        },
+        {
+          heading: "Base légale du traitement des données",
+          paragraphs: ["Le traitement de vos données personnelles est fondé sur :"],
+          items: [
+            "Votre consentement explicite pour certaines opérations (ex : envoi de newsletters) ;",
+            "L'exécution d'un contrat ou la prise de mesures précontractuelles à votre demande ;",
+            "La nécessité de respecter nos obligations légales ;",
+            "Notre intérêt légitime à améliorer nos services et à assurer la sécurité de notre site.",
+          ],
+        },
+        {
+          heading: "Destinataire des données",
+          paragraphs: ["Vos données personnelles sont destinées à :"],
+          items: [
+            "BEGO et ses équipes internes ;",
+            "Nos partenaires et prestataires de services, uniquement dans le cadre de l'exécution de nos missions (ex : hébergeur, prestataires techniques) ;",
+            "Les autorités compétentes, si requis par la loi.",
+          ],
+        },
+        {
+          heading: "Transfert de données à l'international",
           paragraphs: [
-            "Le traitement repose sur le consentement explicite, l'exécution contractuelle, les obligations légales et les intérêts légitimes de BEGO.",
+            "Vos données personnelles sont principalement traitées au Togo. Cependant, dans le cadre de certaines collaborations internationales, vos données pourraient être transférées vers des pays situés en dehors de l'Union Africaine. Dans ce cas, nous nous assurons que des garanties appropriées sont mises en place pour protéger vos données.",
           ],
         },
         {
-          heading: "Destinataires",
+          heading: "Durée de conservation des données",
           paragraphs: [
-            "Les données sont traitées en interne et peuvent être communiquées aux prestataires de services de BEGO ainsi qu'aux autorités si la loi l'exige.",
+            "Vos données personnelles sont conservées pendant la durée nécessaire à la réalisation des finalités pour lesquelles elles ont été collectées, conformément à nos obligations légales et réglementaires. Par exemple :",
+          ],
+          items: [
+            "Les données de contact sont conservées pendant 3 ans à compter de votre dernière interaction avec nous ;",
+            "Les données liées à un contrat sont conservées pendant la durée du contrat et jusqu'à 5 ans après sa fin.",
           ],
         },
         {
-          heading: "Transferts internationaux",
-          paragraphs: ["Les données demeurent principalement au Togo, avec des garanties appropriées pour tout transfert en dehors de l'Union africaine."],
+          heading: "Vos droits sur vos données",
+          paragraphs: ["Conformément à la législation en vigueur, vous disposez des droits suivants concernant vos données personnelles :"],
+          items: [
+            "Droit d'accès : Vous pouvez demander à accéder à vos données personnelles ;",
+            "Droit de rectification : Vous pouvez demander à corriger ou à compléter vos données si elles sont inexactes ou incomplètes ;",
+            "Droit à l'effacement : Vous pouvez demander la suppression de vos données dans certains cas (ex : données non nécessaires, retrait de consentement) ;",
+            "Droit à la limitation du traitement : Vous pouvez demander à limiter l'utilisation de vos données dans certaines situations ;",
+            "Droit à la portabilité : Vous pouvez demander à recevoir vos données dans un format structuré et à les transférer à un autre responsable de traitement ;",
+            "Droit d'opposition : Vous pouvez vous opposer au traitement de vos données pour des raisons liées à votre situation particulière.",
+          ],
         },
         {
-          heading: "Conservation",
-          paragraphs: ["Les données de contact sont conservées pendant 3 ans à compter de votre dernière interaction avec BEGO."],
-        },
-        {
-          heading: "Vos droits",
           paragraphs: [
-            "Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, de portabilité et d'opposition sur vos données personnelles.",
+            "Pour exercer ces droits, vous pouvez nous contacter à l'adresse suivante : contact@cabinetbego.com. Nous nous engageons à répondre à votre demande dans un délai raisonnable.",
           ],
         },
-        { heading: "Sécurité", paragraphs: ["Chiffrement, pare-feu et formation du personnel constituent nos principales mesures de protection."] },
         {
-          heading: "Cookies",
-          paragraphs: ["Le site utilise des cookies pour la gestion des préférences, l'analyse d'audience et la personnalisation du contenu."],
+          heading: "Sécurité des données",
+          paragraphs: [
+            "BEGO met en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données personnelles contre tout accès non autorisé, modification, divulgation ou destruction. Ces mesures incluent :",
+          ],
+          items: [
+            "Le chiffrement des données sensibles ;",
+            "La mise en place de pare-feu et de systèmes de détection d'intrusions ;",
+            "La formation de nos équipes à la protection des données.",
+          ],
+        },
+        {
+          heading: "Cookies et technologies similaires",
+          paragraphs: ["Notre site utilise des cookies pour améliorer votre expérience utilisateur. Ces cookies nous permettent de :"],
+          items: ["Mémoriser vos préférences ;", "Analyser le trafic et les performances du site ;", "Vous proposer des contenus personnalisés."],
+        },
+        {
+          paragraphs: [
+            "Vous pouvez configurer votre navigateur pour refuser les cookies, mais cela pourrait affecter certaines fonctionnalités du site.",
+          ],
+        },
+        {
+          heading: "Modifications de la politique de protection des données",
+          paragraphs: [
+            "Nous nous réservons le droit de modifier cette politique de protection des données à tout moment, notamment pour nous conformer aux évolutions légales, réglementaires ou technologiques. Toute modification sera publiée sur cette page avec la date de la dernière mise à jour.",
+          ],
+        },
+        {
+          heading: "Contact",
+          paragraphs: [
+            "Pour toute question ou réclamation concernant la protection de vos données personnelles, vous pouvez nous contacter à l'adresse suivante :",
+            "Bureau d'Études et de Gestion des Organisations (BEGO)",
+            "Email : contact@cabinetbego.com",
+            "Tél. : (+228) 90 35 23 86 / (+228) 99 72 52 85 / (+228) 98 94 37 93",
+          ],
         },
       ],
     },
@@ -1169,53 +1237,121 @@ export const infoPages: Record<Locale, Record<string, InfoPageContent>> = {
       slug: "confidentialite",
       kicker: "Info",
       title: "Personal Data Protection Policy",
-      intro:
-        "The Organizational Studies and Management Bureau (BEGO), publisher of cabinetbego.com, places great importance on protecting your personal data.",
       sections: [
         {
-          heading: "Data collected",
+          heading: "Introduction",
           paragraphs: [
-            "The company collects contact details, professional information, browsing data, and information provided through the site's forms.",
+            "The Organizational Studies and Management Bureau (BEGO), publisher of the cabinetbego.com website, places great importance on protecting your personal data. This personal data protection policy is intended to inform you about how we collect, use, protect, and retain your personal data when you use our website and services.",
           ],
         },
         {
-          heading: "Purposes of processing",
+          heading: "Personal data collected",
+          paragraphs: ["The personal data we collect may include, but is not limited to:"],
           items: [
-            "Respond to your information or contact requests",
-            "Provide you with the services you have requested",
-            "Keep you informed of BEGO's news",
+            "Your contact details (first name, last name, email address, phone number);",
+            "Your professional information (position, company, industry);",
+            "Browsing data (IP address, pages viewed, visit duration);",
+            "Information provided through contact, registration, or quote request forms.",
           ],
         },
         {
-          heading: "Legal basis",
+          heading: "Purposes of data collection",
+          paragraphs: ["The personal data we collect is used for the following purposes:"],
+          items: [
+            "Respond to your information or contact requests;",
+            "Provide you with the services you have requested;",
+            "Keep you informed of BEGO's news, offers, and events (with your consent);",
+            "Improve the quality of our services and our website;",
+            "Comply with our legal and regulatory obligations.",
+          ],
+        },
+        {
+          heading: "Legal basis for data processing",
+          paragraphs: ["The processing of your personal data is based on:"],
+          items: [
+            "Your explicit consent for certain operations (e.g., sending newsletters);",
+            "The performance of a contract or the taking of pre-contractual steps at your request;",
+            "The need to comply with our legal obligations;",
+            "Our legitimate interest in improving our services and ensuring the security of our site.",
+          ],
+        },
+        {
+          heading: "Data recipients",
+          paragraphs: ["Your personal data is intended for:"],
+          items: [
+            "BEGO and its internal teams;",
+            "Our partners and service providers, solely for carrying out our assignments (e.g., hosting provider, technical service providers);",
+            "The competent authorities, where required by law.",
+          ],
+        },
+        {
+          heading: "International data transfers",
           paragraphs: [
-            "Processing is based on explicit consent, contractual performance, legal obligations, and BEGO's legitimate interests.",
+            "Your personal data is primarily processed in Togo. However, as part of certain international collaborations, your data may be transferred to countries outside the African Union. In such cases, we ensure that appropriate safeguards are put in place to protect your data.",
           ],
         },
         {
-          heading: "Recipients",
+          heading: "Data retention period",
           paragraphs: [
-            "Data is processed internally and may be shared with BEGO's service providers, as well as with authorities where required by law.",
+            "Your personal data is retained for as long as necessary to fulfill the purposes for which it was collected, in accordance with our legal and regulatory obligations. For example:",
+          ],
+          items: [
+            "Contact data is retained for 3 years from your last interaction with us;",
+            "Contract-related data is retained for the duration of the contract and up to 5 years after it ends.",
           ],
         },
         {
-          heading: "International transfers",
-          paragraphs: ["Data is kept primarily in Togo, with appropriate safeguards for any transfer outside the African Union."],
+          heading: "Your rights over your data",
+          paragraphs: ["In accordance with applicable law, you have the following rights regarding your personal data:"],
+          items: [
+            "Right of access: You may request access to your personal data;",
+            "Right to rectification: You may request that your data be corrected or completed if it is inaccurate or incomplete;",
+            "Right to erasure: You may request the deletion of your data in certain cases (e.g., data no longer necessary, withdrawal of consent);",
+            "Right to restriction of processing: You may request that the use of your data be restricted in certain situations;",
+            "Right to portability: You may request to receive your data in a structured format and to transfer it to another data controller;",
+            "Right to object: You may object to the processing of your data for reasons relating to your particular situation.",
+          ],
         },
         {
-          heading: "Retention",
-          paragraphs: ["Contact data is retained for 3 years from your last interaction with BEGO."],
-        },
-        {
-          heading: "Your rights",
           paragraphs: [
-            "You have the right to access, rectify, erase, restrict, port, and object to the processing of your personal data.",
+            "To exercise these rights, you may contact us at: contact@cabinetbego.com. We are committed to responding to your request within a reasonable timeframe.",
           ],
         },
-        { heading: "Security", paragraphs: ["Encryption, firewalls, and staff training are our main protection measures."] },
         {
-          heading: "Cookies",
-          paragraphs: ["The site uses cookies for preference management, audience analysis, and content personalization."],
+          heading: "Data security",
+          paragraphs: [
+            "BEGO implements appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. These measures include:",
+          ],
+          items: [
+            "Encryption of sensitive data;",
+            "The implementation of firewalls and intrusion detection systems;",
+            "Training our teams on data protection.",
+          ],
+        },
+        {
+          heading: "Cookies and similar technologies",
+          paragraphs: ["Our site uses cookies to improve your user experience. These cookies allow us to:"],
+          items: ["Remember your preferences;", "Analyze site traffic and performance;", "Offer you personalized content."],
+        },
+        {
+          paragraphs: [
+            "You may configure your browser to refuse cookies, although this may affect certain features of the site.",
+          ],
+        },
+        {
+          heading: "Changes to the data protection policy",
+          paragraphs: [
+            "We reserve the right to modify this data protection policy at any time, in particular to comply with legal, regulatory, or technological developments. Any change will be published on this page along with the date of the last update.",
+          ],
+        },
+        {
+          heading: "Contact",
+          paragraphs: [
+            "For any question or complaint regarding the protection of your personal data, you may contact us at:",
+            "Organizational Studies and Management Bureau (BEGO)",
+            "Email: contact@cabinetbego.com",
+            "Phone: (+228) 90 35 23 86 / (+228) 99 72 52 85 / (+228) 98 94 37 93",
+          ],
         },
       ],
     },
