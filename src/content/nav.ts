@@ -7,8 +7,8 @@ export const nav: NavItem[] = [
     children: [
       { label: "Vision, mission, valeurs", href: "/qui-sommes-nous/vision-mission-valeurs" },
       { label: "Équipe", href: "/qui-sommes-nous/equipe" },
-      { label: "Recherche & développement", href: "/qui-sommes-nous/recherche-developpement" },
       { label: "Engagements & politiques", href: "/qui-sommes-nous/engagements-politiques" },
+      { label: "Recherche & développement", href: "/qui-sommes-nous/recherche-developpement" },
     ],
   },
   {
@@ -35,7 +35,7 @@ export const nav: NavItem[] = [
     href: "/references",
     children: [
       { label: "Clients & partenaires", href: "/references/clients-partenaires" },
-      { label: "Nos réalisations", href: "/references/projets" },
+      { label: "Projets récents ou en cours", href: "/references/projets" },
     ],
   },
   {
