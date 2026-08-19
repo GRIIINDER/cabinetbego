@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Container from "./Container";
 import Kicker from "./Kicker";
 import CtaBand from "./CtaBand";
@@ -16,35 +15,6 @@ export default function LandingPageLayout({ page }: { page: LandingContent }) {
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
             {page.intro}
           </p>
-        </Container>
-      </section>
-
-      <section className="py-16 lg:py-20">
-        <Container>
-          <div className="grid gap-6 sm:grid-cols-2">
-            {page.cards.map((card) => (
-              <Link
-                key={card.href}
-                href={card.href}
-                className="group flex flex-col justify-between rounded-3xl border border-white/10 bg-[#161616] p-8 transition hover:-translate-y-1 hover:border-gold-400 hover:shadow-xl hover:shadow-black/40"
-              >
-                <div>
-                  <h2 className="font-serif text-xl font-semibold text-white">
-                    {card.title}
-                  </h2>
-                  <p className="mt-3 text-sm leading-relaxed text-white/70">
-                    {card.description}
-                  </p>
-                </div>
-                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold-600">
-                  En savoir plus
-                  <svg width="16" height="10" viewBox="0 0 16 10" fill="none" className="transition group-hover:translate-x-1" aria-hidden="true">
-                    <path d="M1 5h14M10 1l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </span>
-              </Link>
-            ))}
-          </div>
         </Container>
       </section>
 
