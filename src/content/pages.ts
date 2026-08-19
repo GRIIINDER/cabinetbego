@@ -496,47 +496,51 @@ export const infoPages: Record<Locale, Record<string, InfoPageContent>> = {
       sections: [
         {
           heading: "Informations générales",
-          paragraphs: ["Le site internet cabinetbego.com est édité par le Bureau d'Études et de Gestion des Organisations (BEGO)."],
-        },
-        {
-          heading: "Siège social et contact",
           paragraphs: [
-            "Adidogomé – Apédokoin, près de la clinique panafricaine Les Marrons, Lomé, Togo. Téléphone : (+228) 90 35 23 86 / (+228) 99 72 52 85 / (+228) 98 94 37 93.",
+            "Le site internet cabinetbego.com est édité par : Bureau d'Études et de Gestion des Organisations (BEGO)",
+            "Siège social : Adidogomé – Apédokoin, près de la clinique panafricaine Les Marrons",
+            "Tél. : (+228) 90 35 23 86 / (+228) 99 72 52 85 / (+228) 98 94 37 93",
+            "Email : contact@cabinetbego.com",
+            "BP : 31044 Lomé – Togo",
           ],
         },
         {
           heading: "Directeur de la publication",
-          paragraphs: ["Le directeur de la publication est M. TOUNOUVI Komi Mawuko, représentant légal de BEGO."],
+          paragraphs: ["Le directeur de la publication est M. TOUNOUVI Komi Mawko, représentant légal de BEGO."],
         },
-        { heading: "Hébergement du site", paragraphs: ["Le site est hébergé par Vercel Inc."] },
+        {
+          heading: "Hébergement du site",
+          paragraphs: ["Le site est hébergé par : Vercel Inc."],
+        },
         {
           heading: "Propriété intellectuelle",
           paragraphs: [
-            "Tous les contenus présents sur le site cabinetbego.com (textes, images, logos, vidéos, etc.) sont la propriété exclusive de BEGO. Toute reproduction, distribution, modification ou utilisation de ces contenus sans autorisation préalable est strictement interdite.",
+            "Tous les contenus présents sur le site cabinetbego.com (textes, images, logos, vidéos, etc.) sont la propriété exclusive de BEGO ou de ses partenaires. Toute reproduction, distribution, modification ou utilisation de ces contenus sans autorisation préalable est strictement interdite et pourra donner lieu à des poursuites judiciaires.",
           ],
         },
         {
           heading: "Protection des données personnelles",
           paragraphs: [
-            "BEGO s'engage à protéger les données personnelles des utilisateurs du site. Les informations collectées via les formulaires de contact ou d'inscription sont uniquement utilisées pour les besoins de nos services et ne seront en aucun cas transmises à des tiers sans votre consentement explicite.",
+            "Conformément à la législation en vigueur, BEGO s'engage à protéger les données personnelles des utilisateurs du site. Les informations collectées via les formulaires de contact ou d'inscription sont uniquement utilisées dans le cadre des services proposés par BEGO et ne seront en aucun cas transmises à des tiers sans votre consentement explicite.",
+            "Pour toute question relative à la protection de vos données, vous pouvez nous contacter à l'adresse suivante : contact@cabinetbego.com",
           ],
         },
         {
           heading: "Cookies",
           paragraphs: [
-            "Le site cabinetbego.com utilise des cookies pour améliorer l'expérience utilisateur. Vous pouvez désactiver les cookies via les paramètres de votre navigateur.",
+            "Le site cabinetbego.com utilise des cookies pour améliorer l'expérience utilisateur. Ces cookies permettent de mémoriser vos préférences et de générer des statistiques de visite. Vous pouvez désactiver les cookies via les paramètres de votre navigateur, mais cela pourrait affecter certaines fonctionnalités du site.",
           ],
         },
         {
           heading: "Limitation de responsabilité",
           paragraphs: [
-            "BEGO décline toute responsabilité concernant les erreurs ou omissions dans les informations publiées sur le site, et ne peut garantir l'exhaustivité, la précision ou l'absence de modification par un tiers.",
+            "BEGO met tout en œuvre pour assurer l'exactitude et la mise à jour des informations diffusées sur son site. Cependant, BEGO ne peut garantir l'exhaustivité, la précision ou l'absence de modification par un tiers. En conséquence, BEGO décline toute responsabilité en cas d'erreur, d'omission ou de résultat obtenu par l'utilisation de ces informations.",
           ],
         },
         {
           heading: "Liens externes",
           paragraphs: [
-            "Le site cabinetbego.com peut contenir des liens vers des sites externes. BEGO n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu ou à leurs pratiques.",
+            "Le site cabinetbego.com peut contenir des liens vers des sites externes. BEGO n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu, leur accessibilité ou leur politique de confidentialité.",
           ],
         },
         {
@@ -547,7 +551,11 @@ export const infoPages: Record<Locale, Record<string, InfoPageContent>> = {
         },
         {
           heading: "Contact",
-          paragraphs: ["Pour toute question relative aux présentes mentions légales, vous pouvez nous contacter via les coordonnées ci-dessus."],
+          paragraphs: [
+            "Pour toute question ou réclamation concernant les mentions légales, vous pouvez nous contacter à l'adresse suivante : Bureau d'Études et de Gestion des Organisations (BEGO)",
+            "Email : contact@cabinetbego.com",
+            "Tél. : (+228) 90 35 23 86 / (+228) 99 72 52 85 / (+228) 98 94 37 93",
+          ],
         },
       ],
     },
@@ -1095,45 +1103,51 @@ export const infoPages: Record<Locale, Record<string, InfoPageContent>> = {
       sections: [
         {
           heading: "General information",
-          paragraphs: ["The cabinetbego.com website is published by the Organizational Studies and Management Bureau (BEGO)."],
-        },
-        {
-          heading: "Registered office and contact",
           paragraphs: [
-            "Adidogomé – Apédokoin, near the Les Marrons pan-African clinic, Lomé, Togo. Phone: (+228) 90 35 23 86 / (+228) 99 72 52 85 / (+228) 98 94 37 93.",
+            "This website, cabinetbego.com, is published by: Organizational Studies and Management Bureau (BEGO)",
+            "Registered office: Adidogomé – Apédokoin, near the Les Marrons pan-African clinic",
+            "Phone: (+228) 90 35 23 86 / (+228) 99 72 52 85 / (+228) 98 94 37 93",
+            "Email: contact@cabinetbego.com",
+            "P.O. Box: 31044 Lomé – Togo",
           ],
         },
         {
           heading: "Publication director",
-          paragraphs: ["The publication director is Mr. TOUNOUVI Komi Mawuko, legal representative of BEGO."],
+          paragraphs: ["The publication director is Mr. TOUNOUVI Komi Mawko, legal representative of BEGO."],
         },
-        { heading: "Hosting", paragraphs: ["The site is hosted by Vercel Inc."] },
+        {
+          heading: "Hosting",
+          paragraphs: ["The site is hosted by: Vercel Inc."],
+        },
         {
           heading: "Intellectual property",
           paragraphs: [
-            "All content on the cabinetbego.com website (text, images, logos, videos, etc.) is the exclusive property of BEGO. Any reproduction, distribution, modification, or use of this content without prior authorization is strictly prohibited.",
+            "All content on the cabinetbego.com website (text, images, logos, videos, etc.) is the exclusive property of BEGO or its partners. Any reproduction, distribution, modification, or use of this content without prior authorization is strictly prohibited and may lead to legal action.",
           ],
         },
         {
           heading: "Personal data protection",
           paragraphs: [
-            "BEGO is committed to protecting the personal data of the site's users. Information collected through contact or registration forms is used solely for the purposes of our services and will never be shared with third parties without your explicit consent.",
+            "In accordance with applicable law, BEGO is committed to protecting the personal data of the site's users. Information collected through contact or registration forms is used solely within the scope of BEGO's services and will never be shared with third parties without your explicit consent.",
+            "For any question regarding the protection of your data, you may contact us at: contact@cabinetbego.com",
           ],
         },
         {
           heading: "Cookies",
-          paragraphs: ["The cabinetbego.com website uses cookies to improve the user experience. You may disable cookies via your browser settings."],
+          paragraphs: [
+            "The cabinetbego.com website uses cookies to improve the user experience. These cookies help remember your preferences and generate visit statistics. You may disable cookies via your browser settings, although this may affect certain features of the site.",
+          ],
         },
         {
           heading: "Limitation of liability",
           paragraphs: [
-            "BEGO disclaims any liability for errors or omissions in the information published on the site, and cannot guarantee its completeness, accuracy, or freedom from third-party alteration.",
+            "BEGO makes every effort to ensure the accuracy and timeliness of the information published on its site. However, BEGO cannot guarantee its completeness, accuracy, or freedom from third-party alteration. Accordingly, BEGO disclaims any liability for errors, omissions, or outcomes resulting from the use of this information.",
           ],
         },
         {
           heading: "External links",
           paragraphs: [
-            "The cabinetbego.com website may contain links to external sites. BEGO has no control over these sites and disclaims any responsibility for their content or practices.",
+            "The cabinetbego.com website may contain links to external sites. BEGO has no control over these sites and disclaims any responsibility for their content, accessibility, or privacy policy.",
           ],
         },
         {
@@ -1142,7 +1156,11 @@ export const infoPages: Record<Locale, Record<string, InfoPageContent>> = {
         },
         {
           heading: "Contact",
-          paragraphs: ["For any question relating to this legal notice, you may contact us using the details above."],
+          paragraphs: [
+            "For any question or complaint regarding this legal notice, you may contact us at: Organizational Studies and Management Bureau (BEGO)",
+            "Email: contact@cabinetbego.com",
+            "Phone: (+228) 90 35 23 86 / (+228) 99 72 52 85 / (+228) 98 94 37 93",
+          ],
         },
       ],
     },
