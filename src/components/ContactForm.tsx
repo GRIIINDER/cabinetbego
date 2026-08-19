@@ -75,8 +75,8 @@ export default function ContactForm() {
       />
 
       <div className="grid gap-5 sm:grid-cols-2">
-        <Field label={fields.firstName} name="firstName" required />
         <Field label={fields.lastName} name="lastName" required />
+        <Field label={fields.firstName} name="firstName" required />
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
