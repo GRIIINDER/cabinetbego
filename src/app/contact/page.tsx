@@ -15,7 +15,7 @@ const socials = [
 ];
 
 export default function Page() {
-  const mapQuery = encodeURIComponent(`${site.address.line1}, ${site.address.line2}`);
+  const mapQuery = "6.201167,1.138833";
 
   return (
     <>
