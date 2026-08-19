@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --background: #faf8f4;
+  --foreground: #17232b;
+
+  --color-ink-950: #0b1d2c;
+  --color-ink-900: #102a3f;
+  --color-ink-800: #163a55;
+  --color-ink-700: #1e4d6f;
+  --color-ink-600: #2b6088;
+
+  --color-sand-50: #faf8f4;
+  --color-sand-100: #f4f0e7;
+  --color-sand-200: #e9e2d2;
+  --color-sand-300: #d8ccae;
+
+  --color-gold-400: #d8ad5b;
+  --color-gold-500: #c8963e;
+  --color-gold-600: #a97829;
+
+  --color-green-600: #2f6b4f;
+  --color-green-700: #235339;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-ink-950: var(--color-ink-950);
+  --color-ink-900: var(--color-ink-900);
+  --color-ink-800: var(--color-ink-800);
+  --color-ink-700: var(--color-ink-700);
+  --color-ink-600: var(--color-ink-600);
+
+  --color-sand-50: var(--color-sand-50);
+  --color-sand-100: var(--color-sand-100);
+  --color-sand-200: var(--color-sand-200);
+  --color-sand-300: var(--color-sand-300);
+
+  --color-gold-400: var(--color-gold-400);
+  --color-gold-500: var(--color-gold-500);
+  --color-gold-600: var(--color-gold-600);
+
+  --color-green-600: var(--color-green-600);
+  --color-green-700: var(--color-green-700);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", ui-serif, Georgia, serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+::selection {
+  background: var(--color-gold-400);
+  color: var(--color-ink-950);
+}

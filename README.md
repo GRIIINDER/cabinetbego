@@ -1,109 +1,77 @@
-# 🌍 Cabinet BEGO — Site Web Officiel
+# Cabinet BEGO — site web
 
-> **Bureau d'Études et de Gestion des Organisations**  
-> *Compétence · Confidentialité · Coopération*
+Refonte du site du Bureau d'Études et de Gestion des Organisations (BEGO), avec le même contenu que cabinetbego.com mais un nouveau design (Next.js + TypeScript + Tailwind CSS).
 
-[![Site en ligne](https://img.shields.io/badge/Site%20en%20ligne-cabinetbego.com-0A66C2?style=flat&logo=googlechrome&logoColor=white)](https://cabinetbego.com)
-[![Statut](https://img.shields.io/badge/Statut-Production-28c840?style=flat)]()
-[![Région](https://img.shields.io/badge/Région-Afrique%20de%20l'Ouest-orange?style=flat)]()
-[![Conçu par](https://img.shields.io/badge/Conçu%20par-Credo%20Ahiafor-378ADD?style=flat&logo=github)](https://github.com/credoahiafor)
+## Stack technique
 
----
+- **Next.js 16** (App Router, React Server Components)
+- **TypeScript**
+- **Tailwind CSS v4**
+- **Supabase** (optionnel) pour le formulaire de contact, les actualités et les offres d'emploi
+- Déploiement prévu sur **Vercel**
 
-## 📌 Aperçu
+## Démarrage local
 
-Site vitrine officiel du **Cabinet BEGO**, acteur majeur du développement durable en Afrique de l'Ouest. BEGO offre des services d'études, de formations, de coaching et de gestion d'entreprises à travers ses départements spécialisés.
-
-**Site live :** 🔗 [https://cabinetbego.com](https://cabinetbego.com)
-
----
-
-## 🧭 Pages & Structure
-
-```
-cabinetbego.com/
-├── Accueil
-├── Qui sommes-nous ?
-│   ├── Vision, mission, valeurs
-│   ├── Équipe
-│   ├── Recherche & Développement
-│   └── Engagements & Politiques
-├── Services
-│   ├── Études
-│   ├── Suivis & Évaluations
-│   └── Formations & Coachings
-├── Domaines
-│   ├── Management des organisations
-│   ├── Analyse & développement des chaînes de valeur
-│   ├── Évaluation de genre de projets & programmes
-│   └── Plaidoyer et gestion communautaire
-├── Références
-│   ├── Clients & partenaires
-│   └── Nos réalisations
-├── Ressources
-├── Carrières
-├── News
-└── Contact
+```bash
+npm install
+npm run dev
 ```
 
----
+Le site est accessible sur [http://localhost:3000](http://localhost:3000).
 
-## 🛠 Stack technique
+```bash
+npm run build   # build de production
+npm run start   # sert le build de production
+npm run lint     # ESLint
+```
 
-| Élément | Technologie |
-|---|---|
-| CMS | WordPress |
-| Langages | HTML5 · CSS3 · JavaScript · PHP |
-| Hébergement | Hébergement web dédié |
-| Domaine | cabinetbego.com |
-| Sécurité | SSL/HTTPS · RGPD (gestion des cookies) |
-| Performance | Optimisation des médias · Cache |
+## Structure du contenu
 
----
+Tout le texte du site (repris du site actuel) est centralisé dans `src/content/` :
 
-## ✨ Fonctionnalités
+- `site.ts` — coordonnées, réseaux sociaux, chiffres clés
+- `home.ts` — contenu de la page d'accueil
+- `pages.ts` — pages de contenu "info" (vision/mission, services, domaines, ressources, mentions légales…)
+- `landings.ts` — pages de sommaire (Qui sommes-nous, Services, Domaines, Références, Ressources)
+- `team.ts`, `partners.ts`, `projects.ts`, `careers.ts`, `news.ts`, `contact.ts` — contenus spécifiques
 
-- ✅ Site multipage responsive (desktop & mobile)
-- ✅ Navigation dynamique avec sous-menus
-- ✅ Section actualités (News)
-- ✅ Formulaire de contact
-- ✅ Gestion du consentement RGPD (cookies)
-- ✅ Intégration de partenaires institutionnels (BAD, GIZ, TFO Canada…)
-- ✅ Compteurs animés (pays, projets, équipes)
-- ✅ Section carrières & recrutement
-- ✅ Politique de protection des données personnelles
+Pour modifier un texte, il suffit d'éditer le fichier de contenu correspondant : aucune page `.tsx` n'a besoin d'être touchée pour un simple changement de texte.
 
----
+Les pages elles-mêmes vivent dans `src/app/` (App Router), et réutilisent des gabarits communs (`src/components/InfoPageLayout.tsx`, `LandingPageLayout.tsx`) pour garder un rendu cohérent.
 
-## 🤝 Partenaires institutionnels
+## Configurer Supabase (optionnel)
 
-Le Cabinet BEGO collabore avec des institutions de renom :
+Le site fonctionne sans Supabase (formulaire de contact loggué côté serveur, actualités statiques, aucune offre d'emploi affichée). Pour activer la persistance :
 
-- 🇹🇬 ANPGF Togo
-- 🌍 Banque Africaine de Développement (BAD)
-- 🇨🇦 TFO Canada
-- 🇩🇪 GIZ (Deutsche Gesellschaft für Internationale Zusammenarbeit)
-- 🇹🇬 FNAFPP Togo
+1. Créer un projet sur [supabase.com](https://supabase.com).
+2. Dans l'éditeur SQL du projet, exécuter le script `supabase/schema.sql` (tables `contact_messages`, `news_posts`, `job_postings`).
+3. Copier `.env.example` vers `.env.local` et renseigner :
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `SUPABASE_SERVICE_ROLE_KEY` (Project Settings > API — à garder secret, jamais côté client)
+4. Gérer les actualités et offres d'emploi directement depuis l'éditeur de table Supabase (`news_posts`, `job_postings`).
 
----
+## Déploiement
 
-## 👨‍💻 Développeur
+### 1. GitHub
 
-Conçu et développé par **Credo Ahiafor**  
-Ingénieur IT | Développement d'applications | Réseaux & Sécurité
+```bash
+git remote add origin <url-du-repo-github>
+git branch -M main
+git push -u origin main
+```
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-credoahiafor-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/credoahiafor/)
-[![GitHub](https://img.shields.io/badge/GitHub-credoahiafor-181717?style=flat&logo=github)](https://github.com/credoahiafor)
+### 2. Vercel
 
----
+1. Importer le repo GitHub dans [Vercel](https://vercel.com/new).
+2. Vercel détecte automatiquement Next.js — aucune configuration de build nécessaire.
+3. Renseigner les variables d'environnement (si Supabase est utilisé) dans *Project Settings > Environment Variables*.
+4. Déployer. Chaque push sur `main` redéploie automatiquement.
 
-## 📬 Contact client
+### 3. Nom de domaine
 
-**Cabinet BEGO**  
-🌐 [cabinetbego.com/contact](https://cabinetbego.com/contact/)  
-📍 Lomé, Togo
+Une fois le déploiement validé, pointer `cabinetbego.com` vers Vercel (Project Settings > Domains) en suivant les instructions DNS fournies par Vercel.
 
----
+## Développement avec Claude Code
 
-*© 2024 Cabinet BEGO. Tous droits réservés.*
-
+Ce projet est conçu pour être poursuivi avec Claude Code en local : ouvrez le dossier `cabinet-bego/` dans votre terminal et lancez `claude` pour continuer l'implémentation (contenu des pages "Ressources" à enrichir, offres d'emploi dynamiques, back-office news, etc.).
