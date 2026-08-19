@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-sand-200 bg-white">
+      <section className="relative overflow-hidden border-b border-white/10 bg-black">
         <div
           className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-gold-200/40 blur-3xl"
           style={{ background: "radial-gradient(circle, rgba(200,150,62,0.18), transparent 70%)" }}
@@ -18,10 +18,10 @@ export default function Home() {
         <Container className="relative grid gap-12 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-28">
           <div>
             <Kicker>{home.hero.kicker}</Kicker>
-            <h1 className="mt-5 max-w-xl font-serif text-4xl font-semibold leading-[1.1] text-balance text-ink-950 sm:text-5xl lg:text-6xl">
+            <h1 className="mt-5 max-w-xl font-serif text-4xl font-semibold leading-[1.1] text-balance text-white sm:text-5xl lg:text-6xl">
               {home.hero.title}
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-700">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/70">
               {home.hero.lead}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -31,8 +31,8 @@ export default function Home() {
                   href={link.href}
                   className={
                     i === 0
-                      ? "rounded-full bg-ink-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink-800"
-                      : "rounded-full border border-sand-300 px-6 py-3 text-sm font-semibold text-ink-900 transition hover:border-ink-900"
+                      ? "rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-ink-950 transition hover:bg-gold-400"
+                      : "rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40"
                   }
                 >
                   {link.label}
@@ -42,7 +42,7 @@ export default function Home() {
           </div>
 
           <div className="relative">
-            <div className="relative overflow-hidden rounded-[2rem] border border-sand-200 bg-gradient-to-br from-ink-900 via-ink-800 to-ink-700 p-10 text-white shadow-2xl shadow-ink-950/10">
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-ink-900 via-ink-800 to-ink-700 p-10 text-white shadow-2xl shadow-black/40">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold-400">
                 Cabinet BEGO, l&rsquo;essentiel
               </p>
@@ -72,10 +72,10 @@ export default function Home() {
         <Container>
           <div className="max-w-2xl">
             <Kicker>Nos services</Kicker>
-            <h2 className="mt-4 font-serif text-3xl font-semibold text-balance text-ink-950 sm:text-4xl">
+            <h2 className="mt-4 font-serif text-3xl font-semibold text-balance text-white sm:text-4xl">
               {home.intro.title}
             </h2>
-            <p className="mt-5 text-base leading-relaxed text-ink-700">
+            <p className="mt-5 text-base leading-relaxed text-white/70">
               {home.intro.lead}
             </p>
           </div>
@@ -85,15 +85,15 @@ export default function Home() {
               <Link
                 key={service.href}
                 href={service.href}
-                className="group flex flex-col rounded-3xl border border-sand-200 bg-white p-8 transition hover:-translate-y-1 hover:border-gold-400 hover:shadow-xl hover:shadow-ink-950/5"
+                className="group flex flex-col rounded-3xl border border-white/10 bg-[#161616] p-8 transition hover:-translate-y-1 hover:border-gold-400 hover:shadow-xl hover:shadow-black/40"
               >
                 <span className="font-serif text-3xl text-gold-500">
                   0{i + 1}
                 </span>
-                <h3 className="mt-4 font-serif text-xl font-semibold text-ink-950">
+                <h3 className="mt-4 font-serif text-xl font-semibold text-white">
                   {service.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-700">
+                <p className="mt-3 text-sm leading-relaxed text-white/70">
                   {service.description}
                 </p>
                 <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold-600">
@@ -109,7 +109,7 @@ export default function Home() {
       </section>
 
       {/* Domains */}
-      <section className="border-y border-sand-200 bg-ink-950 py-20 text-white lg:py-24">
+      <section className="border-y border-white/10 bg-[#161616] py-20 text-white lg:py-24">
         <Container>
           <div className="max-w-2xl">
             <Kicker>{home.domainsIntro.title}</Kicker>
@@ -151,13 +151,13 @@ export default function Home() {
         <Container className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
           <div className="max-w-xl">
             <Kicker>Actualités</Kicker>
-            <p className="mt-4 text-lg leading-relaxed text-ink-700">
+            <p className="mt-4 text-lg leading-relaxed text-white/70">
               {home.newsIntro.lead}
             </p>
           </div>
           <Link
             href={home.newsIntro.href}
-            className="shrink-0 rounded-full border border-ink-900 px-6 py-3 text-sm font-semibold text-ink-950 transition hover:bg-ink-950 hover:text-white"
+            className="shrink-0 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-ink-950"
           >
             {home.newsIntro.buttonLabel}
           </Link>

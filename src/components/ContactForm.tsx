@@ -51,11 +51,11 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-3xl border border-green-600/30 bg-green-600/5 p-8 text-center">
-        <p className="font-serif text-xl font-semibold text-green-700">
+      <div className="rounded-3xl border border-green-600/30 bg-green-600/10 p-8 text-center">
+        <p className="font-serif text-xl font-semibold text-green-600">
           Message envoyé
         </p>
-        <p className="mt-2 text-sm text-ink-700">
+        <p className="mt-2 text-sm text-white/70">
           Merci de nous avoir contactés. Notre équipe reviendra vers vous dans les meilleurs délais.
         </p>
       </div>
@@ -87,20 +87,20 @@ export default function ContactForm() {
       <Field label={fields.subject} name="subject" required />
 
       <div>
-        <label htmlFor="message" className="mb-2 block text-sm font-medium text-ink-900">
-          {fields.message} <span className="text-gold-600">*</span>
+        <label htmlFor="message" className="mb-2 block text-sm font-medium text-white/90">
+          {fields.message} <span className="text-gold-500">*</span>
         </label>
         <textarea
           id="message"
           name="message"
           required
           rows={6}
-          className="w-full rounded-2xl border border-sand-300 bg-white px-4 py-3 text-sm text-ink-950 outline-none transition focus:border-ink-900 focus:ring-2 focus:ring-ink-900/10"
+          className="w-full rounded-2xl border border-white/15 bg-[#161616] px-4 py-3 text-sm text-white outline-none transition focus:border-gold-500 focus:ring-2 focus:ring-gold-500/10"
         />
       </div>
 
       {status === "error" && errorMessage && (
-        <p className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700">
+        <p className="rounded-xl bg-red-500/10 px-4 py-3 text-sm text-red-400">
           {errorMessage}
         </p>
       )}
@@ -108,7 +108,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="rounded-full bg-ink-950 px-7 py-3 text-sm font-semibold text-white transition hover:bg-ink-800 disabled:cursor-not-allowed disabled:opacity-60"
+        className="rounded-full bg-gold-500 px-7 py-3 text-sm font-semibold text-ink-950 transition hover:bg-gold-400 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status === "loading" ? "Envoi en cours…" : fields.submit}
       </button>
@@ -129,15 +129,15 @@ function Field({
 }) {
   return (
     <div>
-      <label htmlFor={name} className="mb-2 block text-sm font-medium text-ink-900">
-        {label} {required && <span className="text-gold-600">*</span>}
+      <label htmlFor={name} className="mb-2 block text-sm font-medium text-white/90">
+        {label} {required && <span className="text-gold-500">*</span>}
       </label>
       <input
         id={name}
         name={name}
         type={type}
         required={required}
-        className="w-full rounded-2xl border border-sand-300 bg-white px-4 py-3 text-sm text-ink-950 outline-none transition focus:border-ink-900 focus:ring-2 focus:ring-ink-900/10"
+        className="w-full rounded-2xl border border-white/15 bg-[#161616] px-4 py-3 text-sm text-white outline-none transition focus:border-gold-500 focus:ring-2 focus:ring-gold-500/10"
       />
     </div>
   );

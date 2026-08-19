@@ -29,7 +29,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 px-4 pt-3.5 lg:px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-ink-950/95 shadow-[0_8px_30px_rgba(0,0,0,0.45)] backdrop-blur-xl supports-[backdrop-filter]:bg-ink-950/90">
+        <div className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-black/95 shadow-[0_8px_30px_rgba(0,0,0,0.6)] backdrop-blur-xl supports-[backdrop-filter]:bg-black/90">
           <div className="flex items-center justify-between gap-3 px-4 py-2.5 lg:px-5">
             {/* Logo */}
             <Link href="/" className="shrink-0">
@@ -65,7 +65,7 @@ export default function Header() {
                       )}
                     </Link>
                     {item.children && (
-                      <div className="invisible absolute left-0 top-full w-64 translate-y-1 rounded-2xl border border-white/10 bg-ink-950/98 p-2 opacity-0 shadow-2xl shadow-black/40 backdrop-blur-xl transition duration-150 group-hover:visible group-hover:translate-y-2 group-hover:opacity-100">
+                      <div className="invisible absolute left-0 top-full w-64 translate-y-1 rounded-2xl border border-white/10 bg-black/98 p-2 opacity-0 shadow-2xl shadow-black/40 backdrop-blur-xl transition duration-150 group-hover:visible group-hover:translate-y-2 group-hover:opacity-100">
                         {item.children.map((child) => (
                           <Link
                             key={child.href}

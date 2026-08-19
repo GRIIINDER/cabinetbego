@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
-import "@fontsource/inter/latin-400.css";
-import "@fontsource/inter/latin-500.css";
-import "@fontsource/inter/latin-600.css";
-import "@fontsource/inter/latin-700.css";
-import "@fontsource/fraunces/latin-400.css";
-import "@fontsource/fraunces/latin-500.css";
-import "@fontsource/fraunces/latin-600.css";
-import "@fontsource/fraunces/latin-700.css";
+import "@fontsource/roboto/latin-400-italic.css";
+import "@fontsource/roboto/latin-500-italic.css";
+import "@fontsource/roboto/latin-600-italic.css";
+import "@fontsource/roboto/latin-700-italic.css";
+import "@fontsource/roboto/latin-900-italic.css";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -30,7 +27,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="fr" className="h-full antialiased">
-      <body className="min-h-full flex flex-col bg-sand-50 text-ink-950">
+      <body className="min-h-full flex flex-col bg-black text-white">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

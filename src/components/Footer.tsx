@@ -36,9 +36,9 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="mt-16 bg-ink-950 pb-10">
+    <footer className="mt-16 bg-black pb-10">
       <div className="mx-auto max-w-6xl px-4 lg:px-8">
-        <div className="rounded-[2rem] border border-white/10 bg-ink-900 px-6 py-10 md:px-10 md:py-12">
+        <div className="rounded-[2rem] border border-white/10 bg-[#161616] px-6 py-10 md:px-10 md:py-12">
           <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-6">
             <div>
               <h5 className="text-[16px] font-bold uppercase tracking-[0.08em]" style={{ color: MUTED }}>

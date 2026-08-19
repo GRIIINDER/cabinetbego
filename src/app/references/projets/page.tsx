@@ -15,14 +15,14 @@ export default function Page() {
         <Container>
           <div className="grid gap-5 sm:grid-cols-2">
             {projects.items.map((project, i) => (
-              <div key={project.title} className="rounded-3xl border border-sand-200 bg-white p-7">
+              <div key={project.title} className="rounded-3xl border border-white/10 bg-[#161616] p-7">
                 <span className="font-serif text-2xl text-gold-500">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-3 font-serif text-lg font-semibold text-ink-950">
+                <h3 className="mt-3 font-serif text-lg font-semibold text-white">
                   {project.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-700">
+                <p className="mt-3 text-sm leading-relaxed text-white/70">
                   {project.description}
                 </p>
               </div>

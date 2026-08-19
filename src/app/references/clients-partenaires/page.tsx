@@ -15,9 +15,9 @@ export default function Page() {
         <Container>
           <div className="grid gap-5 sm:grid-cols-3">
             {partners.categories.map((cat) => (
-              <div key={cat.title} className="rounded-3xl border border-sand-200 bg-white p-7">
-                <h3 className="font-serif text-lg font-semibold text-ink-950">{cat.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-700">{cat.description}</p>
+              <div key={cat.title} className="rounded-3xl border border-white/10 bg-[#161616] p-7">
+                <h3 className="font-serif text-lg font-semibold text-white">{cat.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/70">{cat.description}</p>
               </div>
             ))}
           </div>

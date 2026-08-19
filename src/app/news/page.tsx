@@ -21,14 +21,14 @@ export default async function Page() {
         <Container>
           <div className="grid gap-5 sm:grid-cols-2">
             {news.map((item) => (
-              <article key={item.title} className="rounded-3xl border border-sand-200 bg-white p-7">
-                <p className="text-xs font-semibold uppercase tracking-wide text-gold-600">
+              <article key={item.title} className="rounded-3xl border border-white/10 bg-[#161616] p-7">
+                <p className="text-xs font-semibold uppercase tracking-wide text-gold-500">
                   {item.location}
                 </p>
-                <h2 className="mt-3 font-serif text-lg font-semibold text-ink-950">
+                <h2 className="mt-3 font-serif text-lg font-semibold text-white">
                   {item.title}
                 </h2>
-                <p className="mt-3 text-sm leading-relaxed text-ink-700">
+                <p className="mt-3 text-sm leading-relaxed text-white/70">
                   {item.excerpt}
                 </p>
               </article>
