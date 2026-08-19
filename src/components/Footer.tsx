@@ -1,66 +1,14 @@
 import Link from "next/link";
 import { footerNav, footerInfoLinks } from "@/content/footer";
-import { site } from "@/content/site";
 
 const MUTED = "#8DA0BC";
 
-function IconFacebook() {
-  return (
-    <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M9.198 21.5h4V13.49h3.604l.396-3.99h-4V7.5a1 1 0 0 1 1-1h3V2.5h-3a5 5 0 0 0-5 5v1.99H7.198l-.396 3.99h2.396V21.5Z" />
-    </svg>
-  );
-}
-
-function IconLinkedin() {
-  return (
-    <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z" />
-    </svg>
-  );
-}
-
-function IconX() {
-  return (
-    <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M18.9 2.5h3.3l-7.2 8.2 8.5 11.3h-6.6l-5.2-6.8-5.9 6.8H2.5l7.7-8.8L2 2.5h6.8l4.7 6.3 5.4-6.3Zm-1.2 17.4h1.8L7.4 4.4H5.5l12.2 15.5Z" />
-    </svg>
-  );
-}
-
 export default function Footer() {
-  const socials = [
-    { href: site.social.facebook, icon: <IconFacebook />, label: "Facebook" },
-    { href: site.social.linkedin, icon: <IconLinkedin />, label: "LinkedIn" },
-    { href: site.social.x, icon: <IconX />, label: "X" },
-  ];
-
   return (
     <footer className="mt-16 bg-black pb-10">
       <div className="mx-auto max-w-6xl px-4 lg:px-8">
         <div className="rounded-[2rem] border border-white/10 bg-[#161616] px-6 py-10 md:px-10 md:py-12">
-          <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-6">
-            <div>
-              <h5 className="text-[16px] font-bold uppercase tracking-[0.08em]" style={{ color: MUTED }}>
-                Réseaux sociaux
-              </h5>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {socials.map((s) => (
-                  <a
-                    key={s.label}
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={s.label}
-                    title={s.label}
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-[#8DA0BC] transition hover:border-[#006CE4]/50 hover:text-[#006CE4]"
-                  >
-                    {s.icon}
-                  </a>
-                ))}
-              </div>
-            </div>
-
+          <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
             {footerNav.map((item) => (
               <div key={item.href}>
                 <h5 className="text-[16px] font-bold uppercase tracking-[0.08em]" style={{ color: MUTED }}>
