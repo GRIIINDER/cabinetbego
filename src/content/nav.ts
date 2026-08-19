@@ -25,9 +25,9 @@ export const nav: NavItem[] = [
     href: "/domaines",
     children: [
       { label: "Management des organisations", href: "/domaines/management-des-organisations" },
-      { label: "Chaînes de valeur", href: "/domaines/chaines-de-valeur" },
-      { label: "Évaluation de genre", href: "/domaines/evaluation-genre" },
-      { label: "Plaidoyer", href: "/domaines/plaidoyer" },
+      { label: "Analyse & développement des chaînes de valeur", href: "/domaines/chaines-de-valeur" },
+      { label: "Évaluation de genre de projets & programmes de développement", href: "/domaines/evaluation-genre" },
+      { label: "Plaidoyer et gestion communautaire", href: "/domaines/plaidoyer" },
     ],
   },
   {
@@ -35,7 +35,7 @@ export const nav: NavItem[] = [
     href: "/references",
     children: [
       { label: "Clients & partenaires", href: "/references/clients-partenaires" },
-      { label: "Projets récents", href: "/references/projets" },
+      { label: "Nos réalisations", href: "/references/projets" },
     ],
   },
   {
