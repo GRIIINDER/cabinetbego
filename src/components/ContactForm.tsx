@@ -28,6 +28,7 @@ export default function ContactForm() {
       subject: data.get("subject"),
       message: data.get("message"),
       company: data.get("company"), // honeypot
+      locale,
     };
 
     try {

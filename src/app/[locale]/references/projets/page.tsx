@@ -1,20 +1,25 @@
 import type { Metadata } from "next";
+import { getLocale } from "next-intl/server";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 import { projects } from "@/content/projects";
+import type { Locale } from "@/content/site";
 
 export const metadata: Metadata = { title: "Projets récents" };
 
-export default function Page() {
+export default async function Page() {
+  const locale = (await getLocale()) as Locale;
+  const t = projects[locale];
+
   return (
     <>
-      <PageHero kicker="Références" title="Projets récents ou en cours" intro={projects.intro} />
+      <PageHero kicker={t.kicker} title={t.pageTitle} intro={t.intro} />
 
       <section className="py-16 lg:py-20">
         <Container>
           <div className="grid gap-5 sm:grid-cols-2">
-            {projects.items.map((project, i) => (
+            {t.items.map((project, i) => (
               <div key={project.title} className="rounded-3xl border border-white/10 bg-[#161616] p-7">
                 <span className="font-serif text-2xl text-gold-500">
                   {String(i + 1).padStart(2, "0")}

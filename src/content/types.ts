@@ -13,17 +13,10 @@ export interface InfoPageContent {
   sections: ContentSection[];
 }
 
-export interface LandingCard {
-  title: string;
-  description: string;
-  href: string;
-}
-
 export interface LandingContent {
   kicker: string;
   title: string;
   intro: string;
-  cards: LandingCard[];
 }
 
 export interface NavChild {

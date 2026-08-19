@@ -1,20 +1,25 @@
 import type { Metadata } from "next";
+import { getLocale } from "next-intl/server";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 import { team } from "@/content/team";
+import type { Locale } from "@/content/site";
 
 export const metadata: Metadata = { title: "Équipe" };
 
-export default function Page() {
+export default async function Page() {
+  const locale = (await getLocale()) as Locale;
+  const t = team[locale];
+
   return (
     <>
-      <PageHero kicker="Qui sommes-nous" title="Équipe" intro={team.intro} />
+      <PageHero kicker={t.kicker} title={t.pageTitle} intro={t.intro} />
 
       <section className="py-16 lg:py-20">
         <Container>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {team.members.map((member) => (
+            {t.members.map((member) => (
               <div
                 key={member.name}
                 className="rounded-3xl border border-white/10 bg-[#161616] p-6"
@@ -37,18 +42,18 @@ export default function Page() {
           <div className="mt-12 grid gap-6 border-t border-white/10 pt-10 sm:grid-cols-2">
             <div className="rounded-3xl border border-white/10 bg-[#161616] p-7">
               <h3 className="font-serif text-lg font-semibold text-white">
-                Un réseau de consultants
+                {t.networkTitle}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-white/70">
-                {team.partnersNote}
+                {t.partnersNote}
               </p>
             </div>
             <div className="rounded-3xl border border-white/10 bg-[#161616] p-7">
               <h3 className="font-serif text-lg font-semibold text-white">
-                Notre culture d&rsquo;entreprise
+                {t.cultureTitle}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-white/70">
-                {team.culture}
+                {t.culture}
               </p>
             </div>
           </div>

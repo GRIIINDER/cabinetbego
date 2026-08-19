@@ -1,21 +1,22 @@
 import type { Metadata } from "next";
+import { getLocale } from "next-intl/server";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 import { getNews } from "@/lib/news";
+import { newsPage } from "@/content/news";
+import type { Locale } from "@/content/site";
 
 export const metadata: Metadata = { title: "News" };
 
 export default async function Page() {
-  const news = await getNews();
+  const locale = (await getLocale()) as Locale;
+  const news = await getNews(locale);
+  const t = newsPage[locale];
 
   return (
     <>
-      <PageHero
-        kicker="Actualités"
-        title="News"
-        intro="Le Bureau d'Études et de Gestion des Organisations (BEGO), acteur majeur du développement durable en Afrique de l'Ouest, vous présente ici les actualités récentes de ses interventions. Formations, audits, accompagnements techniques, études de marché... restez informés de l'avancement de nos projets et de leurs effets sur le terrain."
-      />
+      <PageHero kicker={t.kicker} title="News" intro={t.intro} />
 
       <section className="py-16 lg:py-20">
         <Container>

@@ -1,13 +1,31 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSupabaseAdminClient } from "@/lib/supabase";
 
+const errors = {
+  fr: {
+    invalidRequest: "Requête invalide.",
+    missingFields: "Merci de renseigner tous les champs obligatoires.",
+    invalidEmail: "Adresse e-mail invalide.",
+    serverError: "Une erreur est survenue lors de l'envoi. Merci de réessayer.",
+  },
+  en: {
+    invalidRequest: "Invalid request.",
+    missingFields: "Please fill in all required fields.",
+    invalidEmail: "Invalid email address.",
+    serverError: "An error occurred while sending. Please try again.",
+  },
+};
+
 export async function POST(req: NextRequest) {
   let body: Record<string, unknown>;
   try {
     body = await req.json();
   } catch {
-    return NextResponse.json({ error: "Requête invalide." }, { status: 400 });
+    return NextResponse.json({ error: errors.fr.invalidRequest }, { status: 400 });
   }
+
+  const locale = body.locale === "en" ? "en" : "fr";
+  const t = errors[locale];
 
   const firstName = String(body.firstName ?? "").trim();
   const lastName = String(body.lastName ?? "").trim();
@@ -23,15 +41,12 @@ export async function POST(req: NextRequest) {
   }
 
   if (!firstName || !lastName || !email || !subject || !message) {
-    return NextResponse.json(
-      { error: "Merci de renseigner tous les champs obligatoires." },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: t.missingFields }, { status: 400 });
   }
 
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(email)) {
-    return NextResponse.json({ error: "Adresse e-mail invalide." }, { status: 400 });
+    return NextResponse.json({ error: t.invalidEmail }, { status: 400 });
   }
 
   const supabase = getSupabaseAdminClient();
@@ -57,10 +72,7 @@ export async function POST(req: NextRequest) {
 
   if (error) {
     console.error("[contact] Erreur Supabase:", error.message);
-    return NextResponse.json(
-      { error: "Une erreur est survenue lors de l'envoi. Merci de réessayer." },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: t.serverError }, { status: 500 });
   }
 
   return NextResponse.json({ ok: true, persisted: true });
