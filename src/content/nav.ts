@@ -35,7 +35,7 @@ export const nav: NavItem[] = [
     href: "/references",
     children: [
       { label: "Clients & partenaires", href: "/references/clients-partenaires" },
-      { label: "Projets récents ou en cours", href: "/references/projets" },
+      { label: "Nos réalisations", href: "/references/projets" },
     ],
   },
   {
