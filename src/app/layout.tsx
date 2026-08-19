@@ -7,7 +7,6 @@ import "@fontsource/fraunces/latin-400.css";
 import "@fontsource/fraunces/latin-500.css";
 import "@fontsource/fraunces/latin-600.css";
 import "@fontsource/fraunces/latin-700.css";
-import "@fontsource/roboto/latin-400-italic.css";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";

@@ -2,13 +2,19 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { nav, topNav } from "@/content/nav";
 
-const MONO = "font-mono";
+const ACCENT = "#006CE4";
+const ACCENT_LIGHT = "#57A6F4";
+const MUTED = "#8DA0BC";
+
+const NAV_LINK =
+  "relative inline-flex items-center gap-1 whitespace-nowrap rounded-full px-3.5 py-2 text-[13px] font-semibold transition-colors duration-200 xl:px-4";
 
 function ChevronIcon({ className = "" }: { className?: string }) {
   return (
-    <svg width="9" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" className={className}>
+    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" className={className}>
       <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -17,51 +23,64 @@ function ChevronIcon({ className = "" }: { className?: string }) {
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [openMobileGroup, setOpenMobileGroup] = useState<string | null>(null);
+  const [hovered, setHovered] = useState<string | null>(null);
+  const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 px-4 pt-3 lg:px-6 lg:pt-4">
+    <header className="sticky top-0 z-50 px-4 pt-3.5 lg:px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="overflow-hidden rounded-[1.75rem] border border-ink-800 bg-ink-950/95 shadow-[0_8px_30px_rgba(11,29,44,0.35)] backdrop-blur-xl supports-[backdrop-filter]:bg-ink-950/85">
+        <div className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-ink-950/95 shadow-[0_8px_30px_rgba(0,0,0,0.45)] backdrop-blur-xl supports-[backdrop-filter]:bg-ink-950/90">
           <div className="flex items-center justify-between gap-3 px-4 py-2.5 lg:px-5">
             {/* Logo */}
-            <Link href="/" className="group flex shrink-0 items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gold-500 font-serif text-sm font-bold text-ink-950 transition group-hover:bg-gold-400">
-                B
-              </span>
-              <span className="hidden flex-col leading-none sm:flex">
-                <span className="font-serif text-base font-semibold tracking-tight text-white">BEGO</span>
-                <span className="mt-1 text-[9px] uppercase tracking-[0.16em] text-sand-300/60">
-                  Études &amp; gestion
-                </span>
+            <Link href="/" className="shrink-0">
+              <span
+                style={{ backgroundColor: ACCENT }}
+                className="inline-block rounded-full px-3.5 py-2 text-[15px] font-black leading-none text-white transition hover:brightness-110"
+              >
+                BEGO
               </span>
             </Link>
 
             {/* Desktop nav */}
-            <nav className="hidden items-center gap-0.5 lg:flex">
-              {nav.map((item) => (
-                <div key={item.href} className="group relative">
-                  <Link
-                    href={item.href}
-                    className={`${MONO} relative flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-2 text-[11.5px] font-semibold uppercase tracking-wide text-sand-300 transition hover:bg-white/5 hover:text-white xl:px-3.5`}
-                  >
-                    {item.label}
-                    {item.children && <ChevronIcon className="opacity-60 transition group-hover:opacity-100" />}
-                  </Link>
-                  {item.children && (
-                    <div className="invisible absolute left-0 top-full w-64 translate-y-1 rounded-2xl border border-gold-500/15 bg-ink-950/98 p-2 opacity-0 shadow-2xl shadow-black/40 backdrop-blur-xl transition duration-150 group-hover:visible group-hover:translate-y-2 group-hover:opacity-100">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          className="block rounded-xl px-3.5 py-2.5 text-sm text-sand-300 transition hover:bg-gold-500/10 hover:text-gold-400"
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
+            <nav className="hidden items-center gap-0.5 lg:flex" onMouseLeave={() => setHovered(null)}>
+              {nav.map((item) => {
+                const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
+                const isHovered = hovered === item.href;
+                const highlighted = isActive || isHovered;
+                return (
+                  <div key={item.href} className="group relative" onMouseEnter={() => setHovered(item.href)}>
+                    <Link
+                      href={item.href}
+                      className={`${NAV_LINK} ${highlighted ? "text-white" : ""}`}
+                      style={!highlighted ? { color: MUTED } : undefined}
+                    >
+                      {highlighted && (
+                        <span aria-hidden className="absolute inset-0 rounded-full" style={{ backgroundColor: `${ACCENT}26` }} />
+                      )}
+                      <span className="relative">{item.label}</span>
+                      {item.children && (
+                        <ChevronIcon
+                          className={`relative transition-transform duration-200 ${isHovered ? "rotate-180" : "opacity-60"}`}
+                        />
+                      )}
+                    </Link>
+                    {item.children && (
+                      <div className="invisible absolute left-0 top-full w-64 translate-y-1 rounded-2xl border border-white/10 bg-ink-950/98 p-2 opacity-0 shadow-2xl shadow-black/40 backdrop-blur-xl transition duration-150 group-hover:visible group-hover:translate-y-2 group-hover:opacity-100">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className="block rounded-xl px-3.5 py-2.5 text-sm transition hover:bg-white/5 hover:text-white"
+                            style={{ color: MUTED }}
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </nav>
 
             {/* Desktop right utilities */}
@@ -69,17 +88,14 @@ export default function Header() {
               {topNav
                 .filter((item) => item.href !== "/contact")
                 .map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={`${MONO} rounded-full px-3.5 py-2 text-[11.5px] font-semibold uppercase tracking-wide text-sand-300 transition hover:bg-white/5 hover:text-white`}
-                  >
+                  <Link key={item.href} href={item.href} className={NAV_LINK} style={{ color: MUTED }}>
                     {item.label}
                   </Link>
                 ))}
               <Link
                 href="/contact"
-                className={`${MONO} ml-1 inline-flex items-center rounded-full bg-gold-500 px-4 py-2 text-[11.5px] font-bold uppercase tracking-wide text-ink-950 transition hover:bg-gold-400`}
+                style={{ backgroundColor: ACCENT }}
+                className="ml-1 inline-flex h-9 items-center rounded-full px-4 text-[13px] font-bold text-white transition hover:brightness-110"
               >
                 Nous contacter
               </Link>
@@ -89,7 +105,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-ink-800 text-white transition hover:border-gold-500/40 hover:text-gold-400 lg:hidden"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white transition hover:border-white/30 lg:hidden"
               aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
               aria-expanded={open}
             >
@@ -107,13 +123,13 @@ export default function Header() {
 
           {/* Mobile panel */}
           {open && (
-            <div className="border-t border-ink-800 lg:hidden">
+            <div className="border-t border-white/10 lg:hidden">
               <div className="max-h-[70vh] overflow-y-auto px-3 py-2">
                 {nav.map((item) => (
-                  <div key={item.href} className="border-b border-ink-800/60 py-0.5 last:border-none">
+                  <div key={item.href} className="border-b border-white/5 py-0.5 last:border-none">
                     <button
                       type="button"
-                      className={`${MONO} flex w-full items-center justify-between rounded-xl px-2 py-3 text-left text-[12.5px] font-semibold uppercase tracking-wide text-white`}
+                      className="flex w-full items-center justify-between rounded-xl px-2 py-3 text-left text-[14px] font-semibold text-white"
                       onClick={() =>
                         setOpenMobileGroup((v) => (v === item.href ? null : item.href))
                       }
@@ -121,7 +137,7 @@ export default function Header() {
                       <Link href={item.href} onClick={() => setOpen(false)}>
                         {item.label}
                       </Link>
-                      <span className="text-gold-400">
+                      <span style={{ color: ACCENT_LIGHT }}>
                         {openMobileGroup === item.href ? "−" : "+"}
                       </span>
                     </button>
@@ -132,7 +148,8 @@ export default function Header() {
                             key={child.href}
                             href={child.href}
                             onClick={() => setOpen(false)}
-                            className="rounded-lg px-3 py-2.5 text-sm text-sand-300 transition hover:bg-white/5 hover:text-white"
+                            className="rounded-lg px-3 py-2.5 text-sm transition hover:bg-white/5 hover:text-white"
+                            style={{ color: MUTED }}
                           >
                             {child.label}
                           </Link>
@@ -142,7 +159,7 @@ export default function Header() {
                   </div>
                 ))}
               </div>
-              <div className="flex flex-col gap-1 border-t border-ink-800 px-3 py-3">
+              <div className="flex flex-col gap-1 border-t border-white/10 px-3 py-3">
                 {topNav
                   .filter((item) => item.href !== "/contact")
                   .map((item) => (
@@ -150,7 +167,8 @@ export default function Header() {
                       key={item.href}
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className={`${MONO} rounded-xl px-2 py-2.5 text-[12px] font-medium uppercase tracking-wide text-sand-300 transition hover:bg-white/5 hover:text-white`}
+                      className="rounded-xl px-2 py-2.5 text-[13px] font-medium transition hover:bg-white/5 hover:text-white"
+                      style={{ color: MUTED }}
                     >
                       {item.label}
                     </Link>
@@ -158,7 +176,8 @@ export default function Header() {
                 <Link
                   href="/contact"
                   onClick={() => setOpen(false)}
-                  className={`${MONO} mt-2 inline-flex items-center justify-center rounded-full bg-gold-500 px-4 py-3 text-[12.5px] font-bold uppercase tracking-wide text-ink-950 transition hover:bg-gold-400`}
+                  style={{ backgroundColor: ACCENT }}
+                  className="mt-2 inline-flex items-center justify-center rounded-full px-4 py-3 text-[13px] font-bold text-white transition hover:brightness-110"
                 >
                   Nous contacter
                 </Link>
