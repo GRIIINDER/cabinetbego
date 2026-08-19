@@ -7,8 +7,8 @@ export const nav: NavItem[] = [
     children: [
       { label: "Vision, mission, valeurs", href: "/qui-sommes-nous/vision-mission-valeurs" },
       { label: "Équipe", href: "/qui-sommes-nous/equipe" },
-      { label: "Engagements & politiques", href: "/qui-sommes-nous/engagements-politiques" },
       { label: "Recherche & développement", href: "/qui-sommes-nous/recherche-developpement" },
+      { label: "Engagements & politiques", href: "/qui-sommes-nous/engagements-politiques" },
     ],
   },
   {
