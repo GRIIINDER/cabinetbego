@@ -42,7 +42,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-10 border-t border-white/10 pt-6 text-[11px] uppercase tracking-[0.1em] text-white/60">
+          <div className="mt-10 border-t border-white/10 pt-6 text-center text-[11px] uppercase tracking-[0.1em] text-white/60">
             <p>© {new Date().getFullYear()} Cabinet BEGO. Tous droits réservés.</p>
           </div>
         </div>
