@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { nav, topNav } from "@/content/nav";
+import { footerNav, footerInfoLinks } from "@/content/footer";
 import { site } from "@/content/site";
 
 const MONO = "font-mono";
@@ -45,38 +45,36 @@ export default function Footer() {
           </div>
 
           <div className="relative z-10">
-            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="sm:col-span-2 lg:col-span-2">
-                <Link href="/" className="inline-flex items-center gap-2.5">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gold-500 font-serif text-sm font-bold text-ink-950">
-                    B
-                  </span>
-                  <span className="font-serif text-lg font-semibold text-white">BEGO</span>
-                </Link>
-                <p className="mt-1 text-xs uppercase tracking-[0.14em] text-sand-300/60">
-                  {site.fullName}
-                </p>
-                <p className="mt-4 max-w-sm text-sm leading-relaxed text-sand-300/80">
-                  {site.description}
-                </p>
-                <div className="mt-6 flex gap-2">
-                  {socials.map((s) => (
-                    <a
-                      key={s.label}
-                      href={s.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={s.label}
-                      title={s.label}
-                      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-ink-700 text-sand-300 transition hover:border-gold-500/50 hover:bg-gold-500/10 hover:text-gold-400"
-                    >
-                      {s.icon}
-                    </a>
-                  ))}
-                </div>
+            <div className="max-w-md">
+              <Link href="/" className="inline-flex items-center gap-2.5">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gold-500 font-serif text-sm font-bold text-ink-950">
+                  B
+                </span>
+                <span className="font-serif text-lg font-semibold text-white">BEGO</span>
+              </Link>
+              <p className="mt-1 text-xs uppercase tracking-[0.14em] text-sand-300/60">
+                {site.fullName}
+              </p>
+              <p className="mt-4 text-sm leading-relaxed text-sand-300/80">{site.description}</p>
+              <div className="mt-6 flex gap-2">
+                {socials.map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    title={s.label}
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-ink-700 text-sand-300 transition hover:border-gold-500/50 hover:bg-gold-500/10 hover:text-gold-400"
+                  >
+                    {s.icon}
+                  </a>
+                ))}
               </div>
+            </div>
 
-              {nav.map((item) => (
+            <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 border-t border-ink-800/60 pt-10 sm:grid-cols-3 lg:grid-cols-5">
+              {footerNav.map((item) => (
                 <div key={item.href}>
                   <h5 className={`${MONO} text-[11px] font-bold uppercase tracking-[0.12em] text-sand-400/60`}>
                     {item.label}
@@ -84,7 +82,7 @@ export default function Footer() {
                   <ul className="mt-4 space-y-2.5">
                     {item.children?.map((child) => (
                       <li key={child.href}>
-                        <Link href={child.href} className="text-sm text-sand-300/90 transition hover:text-gold-400">
+                        <Link href={child.href} className="text-sm leading-snug text-sand-300/90 transition hover:text-gold-400">
                           {child.label}
                         </Link>
                       </li>
@@ -95,38 +93,22 @@ export default function Footer() {
 
               <div>
                 <h5 className={`${MONO} text-[11px] font-bold uppercase tracking-[0.12em] text-sand-400/60`}>
-                  Contact
+                  Infos
                 </h5>
                 <ul className="mt-4 space-y-2.5">
-                  {topNav.map((item) => (
+                  {footerInfoLinks.map((item) => (
                     <li key={item.href}>
-                      <Link href={item.href} className="text-sm text-sand-300/90 transition hover:text-gold-400">
+                      <Link href={item.href} className="text-sm leading-snug text-sand-300/90 transition hover:text-gold-400">
                         {item.label}
                       </Link>
                     </li>
                   ))}
                 </ul>
-                <div className="mt-5 space-y-1 text-sm text-sand-300/80">
-                  <p>{site.address.line1}</p>
-                  <p>{site.address.line2}</p>
-                  <a href={`mailto:${site.email}`} className="mt-1 block text-gold-400 hover:text-gold-300">
-                    {site.email}
-                  </a>
-                </div>
               </div>
             </div>
 
-            <div className={`${MONO} mt-10 flex flex-col gap-3 border-t border-ink-800 pt-6 text-[11px] text-sand-400/70 sm:flex-row sm:items-center sm:justify-between`}>
+            <div className={`${MONO} mt-10 border-t border-ink-800 pt-6 text-[11px] text-sand-400/70`}>
               <p>© {new Date().getFullYear()} Cabinet BEGO. Tous droits réservés.</p>
-              <div className="flex flex-wrap items-center gap-4">
-                <Link href="/mentions-legales" className="transition hover:text-sand-200">
-                  Mentions légales
-                </Link>
-                <Link href="/confidentialite" className="transition hover:text-sand-200">
-                  Confidentialité
-                </Link>
-                <span className="text-sand-400/40">{site.baseline}</span>
-              </div>
             </div>
           </div>
         </div>
