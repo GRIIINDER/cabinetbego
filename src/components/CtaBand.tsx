@@ -15,7 +15,7 @@ export default function CtaBand() {
         </div>
         <Link
           href="/contact"
-          className="shrink-0 rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-ink-950 transition hover:bg-gold-400"
+          className="shrink-0 rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-white transition hover:brightness-110"
         >
           Contactez-nous
         </Link>

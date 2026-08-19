@@ -31,7 +31,7 @@ export default function Home() {
                   href={link.href}
                   className={
                     i === 0
-                      ? "rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-ink-950 transition hover:bg-gold-400"
+                      ? "rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-white transition hover:brightness-110"
                       : "rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40"
                   }
                 >

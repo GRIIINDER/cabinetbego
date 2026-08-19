@@ -5,8 +5,8 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { nav, topNav } from "@/content/nav";
 
-const ACCENT = "#006CE4";
-const ACCENT_LIGHT = "#57A6F4";
+const ACCENT = "#00777F";
+const ACCENT_LIGHT = "#00B3C1";
 const MUTED = "#8DA0BC";
 
 const NAV_LINK =

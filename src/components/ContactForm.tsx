@@ -108,7 +108,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="rounded-full bg-gold-500 px-7 py-3 text-sm font-semibold text-ink-950 transition hover:bg-gold-400 disabled:cursor-not-allowed disabled:opacity-60"
+        className="rounded-full bg-gold-500 px-7 py-3 text-sm font-semibold text-white transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status === "loading" ? "Envoi en cours…" : fields.submit}
       </button>

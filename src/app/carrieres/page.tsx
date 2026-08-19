@@ -73,7 +73,7 @@ export default async function Page() {
               <p className="mt-3 text-sm leading-relaxed text-sand-300">{careers.applicationNote}</p>
               <a
                 href={`mailto:${site.careersEmail}?subject=Candidature spontanée`}
-                className="mt-5 inline-flex rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-ink-950 transition hover:bg-gold-400"
+                className="mt-5 inline-flex rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-white transition hover:brightness-110"
               >
                 {site.careersEmail}
               </a>

@@ -19,7 +19,7 @@ export default function Page() {
                 key={member.name}
                 className="rounded-3xl border border-white/10 bg-[#161616] p-6"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gold-500 font-serif text-lg font-semibold text-ink-950">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gold-500 font-serif text-lg font-semibold text-white">
                   {member.name
                     .split(" ")
                     .slice(0, 2)
