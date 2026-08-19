@@ -353,31 +353,31 @@ export const infoPages: Record<Locale, Record<string, InfoPageContent>> = {
       kicker: "Domaines",
       title: "Plaidoyer et gestion communautaire",
       intro:
-        "Le Bureau d'Études et de Gestion des Organisations (BEGO) s'engage activement dans le plaidoyer pour soutenir la transformation des systèmes agricoles, économiques et sociaux en Afrique de l'Ouest, en s'efforçant d'influer sur les politiques publiques, les pratiques institutionnelles et les comportements collectifs.",
+        "Le Bureau d'Études et de Gestion des Organisations (BEGO) s'engage activement dans le plaidoyer pour soutenir la transformation des systèmes agricoles, économiques et sociaux en Afrique de l'Ouest. À travers nos actions, nous œuvrons à influencer les politiques publiques, les pratiques institutionnelles et les comportements collectifs afin de promouvoir un développement inclusif, durable et équitable.",
       sections: [
         {
-          itemsTitle: "Objectifs de notre plaidoyer",
+          heading: "Nos objectifs en matière de plaidoyer",
           items: [
-            "Faire en sorte que les préoccupations des acteurs locaux soient effectivement prises en compte",
-            "Influencer les politiques de développement à partir de données concrètes et d'observations de terrain",
-            "Améliorer les cadres législatifs, économiques et sociaux",
-            "Renforcer la représentation des organisations de producteurs et des petites entreprises",
+            "Promouvoir une prise en compte effective des préoccupations des acteurs locaux, notamment les producteurs, les femmes, les jeunes et les PME.",
+            "Influencer les politiques de développement à travers des recommandations fondées sur des données concrètes et des retours terrain.",
+            "Contribuer à l'amélioration des cadres législatifs, économiques et sociaux dans nos secteurs d'intervention.",
+            "Appuyer la voix des organisations de producteurs, des filières agricoles, et des petites entreprises pour une meilleure représentativité dans les décisions.",
           ],
         },
         {
-          itemsTitle: "Nos actions clés",
+          itemsTitle: "Nos actions de plaidoyer incluent :",
           items: [
-            "Conduite d'études de terrain et de diagnostics participatifs",
-            "Mobilisation des parties prenantes sur des sujets critiques",
-            "Élaboration de notes de politique (policy briefs) pour les décideurs",
-            "Organisation de dialogues multi-acteurs et de forums régionaux",
-            "Renforcement des capacités de la société civile et des organisations de producteurs",
+            "Réalisation d'études et d'analyses de terrain pour alimenter les discussions politiques (état des lieux, diagnostics participatifs, etc.).",
+            "Mobilisation des parties prenantes autour de thématiques clés (genre, agriculture familiale, contractualisation, accès au financement…).",
+            "Élaboration de notes de politique et de documents stratégiques à destination des décideurs.",
+            "Organisation de dialogues multi-acteurs, forums, ateliers nationaux et régionaux.",
+            "Renforcement des capacités des OSC et OP à défendre leurs intérêts et à formuler des propositions argumentées.",
           ],
         },
         {
           heading: "Notre approche",
           paragraphs: [
-            "Nos activités de plaidoyer s'appuient sur une approche collaborative, fondée sur les preuves et orientée vers l'impact. Nous croyons en une transformation systémique portée par les communautés locales, aux côtés des acteurs publics, privés et de la société civile.",
+            "Nos activités de plaidoyer s'appuient sur une approche collaborative, fondée sur les preuves et orientée vers l'impact. Nous croyons en une transformation systémique portée par les communautés locales, en synergie avec les acteurs publics, privés et de la société civile.",
           ],
         },
       ],
@@ -851,31 +851,31 @@ export const infoPages: Record<Locale, Record<string, InfoPageContent>> = {
       kicker: "Focus Areas",
       title: "Advocacy & Community Management",
       intro:
-        "The Organizational Studies and Management Bureau (BEGO) is actively engaged in advocacy to support the transformation of agricultural, economic, and social systems in West Africa, striving to influence public policy, institutional practices, and collective behavior.",
+        "The Organizational Studies and Management Bureau (BEGO) is actively engaged in advocacy to support the transformation of agricultural, economic, and social systems in West Africa. Through our actions, we work to influence public policy, institutional practices, and collective behavior in order to promote inclusive, sustainable, and equitable development.",
       sections: [
         {
-          itemsTitle: "Objectives of our advocacy",
+          heading: "Our advocacy objectives",
           items: [
-            "Ensure that the concerns of local actors are genuinely taken into account",
-            "Influence development policy using concrete data and field observations",
-            "Improve legislative, economic, and social frameworks",
-            "Strengthen the representation of producer organizations and small businesses",
+            "Promote effective consideration of the concerns of local actors, particularly producers, women, youth, and SMEs.",
+            "Influence development policy through recommendations grounded in concrete data and field feedback.",
+            "Contribute to improving the legislative, economic, and social frameworks in our areas of intervention.",
+            "Support the voice of producer organizations, agricultural sectors, and small businesses for better representation in decision-making.",
           ],
         },
         {
-          itemsTitle: "Our key actions",
+          itemsTitle: "Our advocacy actions include:",
           items: [
-            "Conducting field studies and participatory diagnostics",
-            "Mobilizing stakeholders on critical issues",
-            "Preparing policy briefs for decision-makers",
-            "Organizing multi-stakeholder dialogues and regional forums",
-            "Building the capacity of civil society and producer organizations",
+            "Carrying out field studies and analyses to inform policy discussions (situational reviews, participatory diagnostics, etc.).",
+            "Mobilizing stakeholders around key themes (gender, family farming, contracting, access to financing…).",
+            "Preparing policy notes and strategic documents for decision-makers.",
+            "Organizing multi-stakeholder dialogues, forums, and national and regional workshops.",
+            "Building the capacity of CSOs and POs to defend their interests and formulate well-argued proposals.",
           ],
         },
         {
           heading: "Our approach",
           paragraphs: [
-            "Our advocacy activities are based on a collaborative, evidence-based, and impact-oriented approach. We believe in systemic transformation driven by local communities, alongside public, private, and civil society actors.",
+            "Our advocacy activities are based on a collaborative, evidence-based, and impact-oriented approach. We believe in systemic transformation driven by local communities, in synergy with public, private, and civil society actors.",
           ],
         },
       ],
