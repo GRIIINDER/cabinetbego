@@ -1,14 +1,17 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { useLocale } from "next-intl";
 import { contactPage } from "@/content/contact";
+import type { Locale } from "@/content/site";
 
 type Status = "idle" | "loading" | "success" | "error";
 
 export default function ContactForm() {
+  const locale = useLocale() as Locale;
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const fields = contactPage.formFields;
+  const fields = contactPage[locale].formFields;
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -37,7 +40,7 @@ export default function ContactForm() {
 
       if (!res.ok) {
         setStatus("error");
-        setErrorMessage(json.error ?? "Une erreur est survenue.");
+        setErrorMessage(json.error ?? fields.genericError);
         return;
       }
 
@@ -45,7 +48,7 @@ export default function ContactForm() {
       form.reset();
     } catch {
       setStatus("error");
-      setErrorMessage("Impossible d'envoyer le message. Vérifiez votre connexion.");
+      setErrorMessage(fields.networkError);
     }
   }
 
@@ -53,10 +56,10 @@ export default function ContactForm() {
     return (
       <div className="rounded-3xl border border-green-600/30 bg-green-600/10 p-8 text-center">
         <p className="font-serif text-xl font-semibold text-green-600">
-          Message envoyé
+          {fields.successTitle}
         </p>
         <p className="mt-2 text-sm text-white/70">
-          Merci de nous avoir contactés. Notre équipe reviendra vers vous dans les meilleurs délais.
+          {fields.successText}
         </p>
       </div>
     );
@@ -110,7 +113,7 @@ export default function ContactForm() {
         disabled={status === "loading"}
         className="rounded-full bg-gold-500 px-7 py-3 text-sm font-semibold text-white transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {status === "loading" ? "Envoi en cours…" : fields.submit}
+        {status === "loading" ? fields.sending : fields.submit}
       </button>
     </form>
   );

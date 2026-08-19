@@ -1,9 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
-import { usePathname } from "next/navigation";
+import { useLocale } from "next-intl";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { nav, topNav } from "@/content/nav";
+import { ui } from "@/content/ui";
+import type { Locale } from "@/content/site";
 
 const ACCENT = "#00777F";
 const ACCENT_LIGHT = "#00B3C1";
@@ -22,11 +24,41 @@ function ChevronIcon({ className = "" }: { className?: string }) {
   );
 }
 
+function LangSwitch({ locale, pathname, className = "" }: { locale: Locale; pathname: string; className?: string }) {
+  const router = useRouter();
+
+  function switchTo(next: Locale) {
+    if (next === locale) return;
+    router.replace(pathname, { locale: next });
+  }
+
+  return (
+    <div className={`inline-flex items-center rounded-full border border-white/10 bg-white/5 p-0.5 ${className}`}>
+      {(["fr", "en"] as const).map((l) => (
+        <button
+          key={l}
+          type="button"
+          onClick={() => switchTo(l)}
+          className="rounded-full px-2.5 py-1 text-[11px] font-bold uppercase transition-colors duration-200"
+          style={l === locale ? { backgroundColor: ACCENT, color: "#fff" } : { color: MUTED }}
+          aria-current={l === locale}
+        >
+          {l}
+        </button>
+      ))}
+    </div>
+  );
+}
+
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [openMobileGroup, setOpenMobileGroup] = useState<string | null>(null);
   const [hovered, setHovered] = useState<string | null>(null);
   const pathname = usePathname();
+  const locale = useLocale() as Locale;
+  const t = ui[locale];
+  const navItems = nav[locale];
+  const topNavItems = topNav[locale];
 
   return (
     <header className="sticky top-0 z-50 px-4 pt-3.5 lg:px-6">
@@ -45,7 +77,7 @@ export default function Header() {
 
             {/* Desktop nav */}
             <nav className="hidden items-center gap-0.5 lg:flex" onMouseLeave={() => setHovered(null)}>
-              {nav.map((item) => {
+              {navItems.map((item) => {
                 const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
                 const isHovered = hovered === item.href;
                 const highlighted = isActive || isHovered;
@@ -86,48 +118,52 @@ export default function Header() {
             </nav>
 
             {/* Desktop right utilities */}
-            <div className="hidden items-center gap-0.5 lg:flex">
-              {topNav
+            <div className="hidden items-center gap-1.5 lg:flex">
+              {topNavItems
                 .filter((item) => item.href !== "/contact")
                 .map((item) => (
                   <Link key={item.href} href={item.href} className={NAV_LINK} style={{ color: MUTED }}>
                     {item.label}
                   </Link>
                 ))}
+              <LangSwitch locale={locale} pathname={pathname} />
               <Link
                 href="/contact"
                 style={{ backgroundColor: ACCENT }}
-                className="ml-1 inline-flex h-9 items-center rounded-full px-4 text-[13px] font-bold text-white transition hover:brightness-110"
+                className="ml-0.5 inline-flex h-9 items-center rounded-full px-4 text-[13px] font-bold text-white transition hover:brightness-110"
               >
-                Nous contacter
+                {t.contactCta}
               </Link>
             </div>
 
             {/* Mobile toggle */}
-            <button
-              type="button"
-              onClick={() => setOpen((v) => !v)}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white transition hover:border-white/30 lg:hidden"
-              aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
-              aria-expanded={open}
-            >
-              {open ? (
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                  <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                </svg>
-              ) : (
-                <svg width="16" height="12" viewBox="0 0 18 14" fill="none" aria-hidden="true">
-                  <path d="M0 1h18M0 7h18M0 13h18" stroke="currentColor" strokeWidth="1.5" />
-                </svg>
-              )}
-            </button>
+            <div className="flex items-center gap-2 lg:hidden">
+              <LangSwitch locale={locale} pathname={pathname} />
+              <button
+                type="button"
+                onClick={() => setOpen((v) => !v)}
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white transition hover:border-white/30"
+                aria-label={open ? t.closeMenu : t.openMenu}
+                aria-expanded={open}
+              >
+                {open ? (
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                ) : (
+                  <svg width="16" height="12" viewBox="0 0 18 14" fill="none" aria-hidden="true">
+                    <path d="M0 1h18M0 7h18M0 13h18" stroke="currentColor" strokeWidth="1.5" />
+                  </svg>
+                )}
+              </button>
+            </div>
           </div>
 
           {/* Mobile panel */}
           {open && (
             <div className="border-t border-white/10 lg:hidden">
               <div className="max-h-[70vh] overflow-y-auto px-3 py-2">
-                {nav.map((item) => (
+                {navItems.map((item) => (
                   <div key={item.href} className="border-b border-white/5 py-0.5 last:border-none">
                     <button
                       type="button"
@@ -162,7 +198,7 @@ export default function Header() {
                 ))}
               </div>
               <div className="flex flex-col gap-1 border-t border-white/10 px-3 py-3">
-                {topNav
+                {topNavItems
                   .filter((item) => item.href !== "/contact")
                   .map((item) => (
                     <Link
@@ -181,7 +217,7 @@ export default function Header() {
                   style={{ backgroundColor: ACCENT }}
                   className="mt-2 inline-flex items-center justify-center rounded-full px-4 py-3 text-[13px] font-bold text-white transition hover:brightness-110"
                 >
-                  Nous contacter
+                  {t.contactCta}
                 </Link>
               </div>
             </div>
