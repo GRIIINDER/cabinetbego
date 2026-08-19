@@ -11,6 +11,8 @@ const MUTED = "#8DA0BC";
 
 const NAV_LINK =
   "relative inline-flex items-center gap-1 whitespace-nowrap rounded-full px-3.5 py-2 text-[13px] font-semibold transition-colors duration-200 xl:px-4";
+const MAIN_NAV_LINK =
+  "relative inline-flex items-center gap-1 whitespace-nowrap rounded-full px-3.5 py-2 text-[14px] font-semibold transition-colors duration-200 xl:px-4";
 
 function ChevronIcon({ className = "" }: { className?: string }) {
   return (
@@ -51,7 +53,7 @@ export default function Header() {
                   <div key={item.href} className="group relative" onMouseEnter={() => setHovered(item.href)}>
                     <Link
                       href={item.href}
-                      className={`${NAV_LINK} ${highlighted ? "text-white" : ""}`}
+                      className={`${MAIN_NAV_LINK} ${highlighted ? "text-white" : ""}`}
                       style={!highlighted ? { color: MUTED } : undefined}
                     >
                       {highlighted && (
@@ -70,7 +72,7 @@ export default function Header() {
                           <Link
                             key={child.href}
                             href={child.href}
-                            className="block rounded-xl px-3.5 py-2.5 text-sm transition hover:bg-white/5 hover:text-white"
+                            className="block rounded-xl px-3.5 py-2.5 text-[14px] transition hover:bg-white/5 hover:text-white"
                             style={{ color: MUTED }}
                           >
                             {child.label}
@@ -148,7 +150,7 @@ export default function Header() {
                             key={child.href}
                             href={child.href}
                             onClick={() => setOpen(false)}
-                            className="rounded-lg px-3 py-2.5 text-sm transition hover:bg-white/5 hover:text-white"
+                            className="rounded-lg px-3 py-2.5 text-[14px] transition hover:bg-white/5 hover:text-white"
                             style={{ color: MUTED }}
                           >
                             {child.label}
